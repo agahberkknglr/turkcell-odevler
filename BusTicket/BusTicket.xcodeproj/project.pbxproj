@@ -14,6 +14,10 @@
 		0840F2B62BDA99F600F2C881 /* BusTicket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0840F2B42BDA99F600F2C881 /* BusTicket.xcdatamodeld */; };
 		0840F2B82BDA99F700F2C881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0840F2B72BDA99F700F2C881 /* Assets.xcassets */; };
 		0840F2BB2BDA99F700F2C881 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0840F2B92BDA99F700F2C881 /* LaunchScreen.storyboard */; };
+		08666E162BDBE7FD00161EF0 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666E152BDBE7FD00161EF0 /* Ticket.swift */; };
+		08666E182BDBE82700161EF0 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666E172BDBE82700161EF0 /* Passenger.swift */; };
+		08666E1A2BDBE84100161EF0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666E192BDBE84100161EF0 /* Date.swift */; };
+		08666E1D2BDBE86100161EF0 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666E1C2BDBE86100161EF0 /* Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		0840F2B72BDA99F700F2C881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0840F2BA2BDA99F700F2C881 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0840F2BC2BDA99F700F2C881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08666E152BDBE7FD00161EF0 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		08666E172BDBE82700161EF0 /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		08666E192BDBE84100161EF0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		08666E1C2BDBE86100161EF0 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		0840F2AA2BDA99F600F2C881 /* BusTicket */ = {
 			isa = PBXGroup;
 			children = (
+				08666E122BDBE73900161EF0 /* Models */,
 				0840F2AB2BDA99F600F2C881 /* AppDelegate.swift */,
 				0840F2AD2BDA99F600F2C881 /* SceneDelegate.swift */,
 				0840F2AF2BDA99F600F2C881 /* ViewController.swift */,
@@ -68,6 +77,17 @@
 				0840F2B42BDA99F600F2C881 /* BusTicket.xcdatamodeld */,
 			);
 			path = BusTicket;
+			sourceTree = "<group>";
+		};
+		08666E122BDBE73900161EF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08666E152BDBE7FD00161EF0 /* Ticket.swift */,
+				08666E172BDBE82700161EF0 /* Passenger.swift */,
+				08666E192BDBE84100161EF0 /* Date.swift */,
+				08666E1C2BDBE86100161EF0 /* Time.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +163,10 @@
 			files = (
 				0840F2B62BDA99F600F2C881 /* BusTicket.xcdatamodeld in Sources */,
 				0840F2B02BDA99F600F2C881 /* ViewController.swift in Sources */,
+				08666E1A2BDBE84100161EF0 /* Date.swift in Sources */,
+				08666E182BDBE82700161EF0 /* Passenger.swift in Sources */,
+				08666E1D2BDBE86100161EF0 /* Time.swift in Sources */,
+				08666E162BDBE7FD00161EF0 /* Ticket.swift in Sources */,
 				0840F2AC2BDA99F600F2C881 /* AppDelegate.swift in Sources */,
 				0840F2AE2BDA99F600F2C881 /* SceneDelegate.swift in Sources */,
 			);
