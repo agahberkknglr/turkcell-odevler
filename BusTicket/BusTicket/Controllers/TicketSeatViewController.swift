@@ -9,26 +9,26 @@ import UIKit
 
 class TicketSeatViewController: UIViewController {
     
+    //MARK: IBOutlets
     @IBOutlet weak var seatCollectionView: UICollectionView!
     
+    //MARK: Variables
     var selectedBusInfo: BusInfoModel?
     var seatsModel = [BusSeatsModel]()
     var selectedSeats = [Int]()
     
+    //MARK: LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         seatCollectionView.dataSource = self
         seatCollectionView.delegate = self
-        
-        setupCollectionViewLayout()
-        
-        setupBusSeatsModel()
-        
         seatCollectionView.register(UINib(nibName: "SeatCollectionViewCell", bundle:nil), forCellWithReuseIdentifier: SeatCollectionViewCell.identifier)
         
+        setupCollectionViewLayout()
+        setupBusSeatsModel()
     }
     
+    //MARK: Functions
     private func setupCollectionViewLayout(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -93,13 +93,11 @@ class TicketSeatViewController: UIViewController {
             let alert = UIAlertController(title: "Error", message: "You need to choose at least 1 seat", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
-            
         }
-        
     }
-    
 }
 
+//MARK: Extensions
 extension TicketSeatViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return seatsModel.count
@@ -137,10 +135,4 @@ extension TicketSeatViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         collectionView.reloadItems(at: [indexPath])
     }
-    
-    
-    
-    
-    
-    
 }

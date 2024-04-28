@@ -464,7 +464,7 @@
         <scene sceneID="T5X-q6-plS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K6d-6t-vhb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="bL7-Qr-pSK"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="bL7-Qr-pSK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="DxG-yh-Kk7">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -483,7 +483,7 @@
         <scene sceneID="TFF-Y4-bXE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lBL-d2-iOK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Tickets" id="mYF-TD-81d"/>
+                    <tabBarItem key="tabBarItem" title="My Tickets" image="ticket" catalog="system" selectedImage="ticket" id="mYF-TD-81d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Q4I-eo-VIU">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -501,6 +501,8 @@
     </scenes>
     <resources>
         <image name="arrow.up.arrow.down.circle" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="ticket" catalog="system" width="128" height="86"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

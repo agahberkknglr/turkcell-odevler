@@ -10,6 +10,7 @@ import CoreData
 
 class TicketViewController: UIViewController {
 
+    //MARK: IBOutles
     @IBOutlet weak var ticketImage: UIImageView!
     @IBOutlet weak var ticketDepartureLabel: UILabel!
     @IBOutlet weak var ticketArrivalLabel: UILabel!
@@ -19,16 +20,18 @@ class TicketViewController: UIViewController {
     @IBOutlet weak var ticketPriceLabel: UILabel!
     @IBOutlet weak var ticketIdLabel: UILabel!
     
+    //MARK: Variables
     var ticketInfoModel: BusInfoModel?
     var seats = "", name = "", surname = "", id = ""
     
-    
+    //MARK: LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabels()
         setupImage()
     }
     
+    //MARK: Functions
     private func setupLabels(){
         ticketDepartureLabel.text = ticketInfoModel?.busDeparture
         ticketArrivalLabel.text = ticketInfoModel?.busArrival
@@ -42,5 +45,4 @@ class TicketViewController: UIViewController {
     private func setupImage(){
         ticketImage.image = ticketInfoModel?.companyImage
     }
-
 }

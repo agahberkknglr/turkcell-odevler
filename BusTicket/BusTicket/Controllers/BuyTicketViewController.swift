@@ -11,30 +11,29 @@ import Photos
 
 class BuyTicketViewController: UIViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var passengerNameTextField: UITextField!
     @IBOutlet weak var passengerSurnameTextField: UITextField!
     @IBOutlet weak var passengerIdTextField: UITextField!
     @IBOutlet weak var passengerSelectedSeatsLabel: UILabel!
     
+    //MARK: Variables
     var selectedPassengerSeats = [Int]()
     var selectedPassengerBusInfo: BusInfoModel?
     
+    //MARK: LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabel()
-        
     }
     
+    //MARK: Functions
     private func setupLabel() {
         let selectedSeats = selectedPassengerSeats.map { String($0 + 1) }.joined(separator: ", ")
-        
         passengerSelectedSeatsLabel.text = selectedSeats
     }
     
-
     @IBAction func buyTicketButtonClicked(_ sender: UIButton) {
-        
-        
         let name = passengerNameTextField.text?.isEmpty ?? true ? "No name" : passengerNameTextField.text
         let surname = passengerSurnameTextField.text?.isEmpty ?? true ? "No surname" : passengerSurnameTextField.text
         let id = passengerIdTextField.text?.isEmpty ?? true ? "0" : passengerIdTextField.text
@@ -80,8 +79,5 @@ class BuyTicketViewController: UIViewController {
         vc.name = name!
         vc.surname = surname!
         navigationController?.pushViewController(vc, animated: true)
-
     }
-    
-
 }

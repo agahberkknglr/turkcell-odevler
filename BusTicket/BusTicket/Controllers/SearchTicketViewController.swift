@@ -34,9 +34,7 @@ class SearchTicketViewController: UIViewController {
         setToolBar(for: arriveCityTextField)
         
         setDatePicker()
-        
     }
-    
     
     //MARK: Functions
     func setToolBar(for textField: UITextField) {
@@ -51,7 +49,6 @@ class SearchTicketViewController: UIViewController {
     func setDatePicker() {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         datePicker.datePickerMode = .date
-        //Todo = dateFormatter.string(from: datePicker.date)
     }
     
     @objc func cancelButtonTapped() {
@@ -77,7 +74,6 @@ class SearchTicketViewController: UIViewController {
     }
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
-        //Todo = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }
     @IBAction func searchTicketsButtonClicked(_ sender: UIButton) {
@@ -93,12 +89,7 @@ class SearchTicketViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
         }
-        
     }
-    
-    
-
-        
 }
 
 //MARK: Extensions

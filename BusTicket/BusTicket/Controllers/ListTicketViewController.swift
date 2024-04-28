@@ -62,11 +62,7 @@ class ListTicketViewController: UIViewController {
             BusInfoModel(companyName: "Pamukkale Turizm", companyImage: UIImage(named: "pamukkale")!, busPrice: "200", busDeparture: destinationModel.departureCity, busArrival: destinationModel.arrivalCity, busTime: "18:00", busDate: dateText),
             BusInfoModel(companyName: "Pamukkale Turizm", companyImage: UIImage(named: "pamukkale")!, busPrice: "200", busDeparture: destinationModel.departureCity, busArrival: destinationModel.arrivalCity, busTime: "19:00", busDate: dateText)
         ]
-        print(busInfo)
     }
-    
-    
-    
 }
 
 //MARK: Extensions
@@ -95,8 +91,4 @@ extension ListTicketViewController: UITableViewDelegate, UITableViewDataSource {
             emptyView?.isHidden = true
         }
     }
-    
-    
-    
-    
 }

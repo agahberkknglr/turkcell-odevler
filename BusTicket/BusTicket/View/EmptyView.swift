@@ -20,8 +20,6 @@ class EmptyView: UIView {
     
     private func setupUI() {
         backgroundColor = .clear
-        
-        // Add your empty view UI elements here, like labels or images
         let label = UILabel()
         label.text = "No items to display"
         label.textAlignment = .center

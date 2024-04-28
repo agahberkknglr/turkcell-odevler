@@ -9,12 +9,15 @@ import UIKit
 import CoreData
 
 class MyTicketsViewController: UIViewController {
-
+    
+    //MARK: IBOutles
     @IBOutlet weak var myTicketsTableView: UITableView!
     
+    //MARK: Variables
     var emptyView: EmptyView?
     lazy var myTickets = [MyTicket]()
     
+    //MARK: LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +29,7 @@ class MyTicketsViewController: UIViewController {
         getTickets()
     }
     
+    //MARK: Functions
     func setupEmptyView() {
         emptyView = EmptyView(frame: myTicketsTableView.bounds)
         myTicketsTableView.backgroundView = emptyView
@@ -58,7 +62,6 @@ class MyTicketsViewController: UIViewController {
                     } else {
                         print("Uiimage failed to convert from data")
                     }
-                    
                 }
             }
         } catch {
@@ -71,9 +74,9 @@ class MyTicketsViewController: UIViewController {
             toggleEmptyViewVisibility()
         }
     }
-
 }
 
+//MARK: Extensions
 extension MyTicketsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
