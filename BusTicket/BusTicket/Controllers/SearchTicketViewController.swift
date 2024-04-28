@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchTicketViewController: UIViewController {
     
@@ -33,6 +34,7 @@ class SearchTicketViewController: UIViewController {
         setToolBar(for: arriveCityTextField)
         
         setDatePicker()
+        
     }
     
     
@@ -43,7 +45,6 @@ class SearchTicketViewController: UIViewController {
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(doneButtonTapped))
         toolbar.setItems([cancelButton, flexibleSpace, doneButton], animated: true)
-        
         textField.inputAccessoryView = toolbar
     }
     
@@ -81,12 +82,23 @@ class SearchTicketViewController: UIViewController {
     }
     @IBAction func searchTicketsButtonClicked(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ListTicketViewController") as! ListTicketViewController
-        vc.arriveCity = arriveCityTextField.text ?? ""
-        vc.departCity = departCityTextField.text ?? ""
-        vc.dateText = dateFormatter.string(from: datePicker.date)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let arriveCity = arriveCityTextField.text, let departCity = departCityTextField.text,
+           !arriveCity.isEmpty, !departCity.isEmpty, arriveCity != departCity {
+            vc.arriveCity = arriveCity
+            vc.departCity = departCity
+            vc.dateText = dateFormatter.string(from: datePicker.date)
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Departure and Arrival cities cannot be empty or the same.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
+        
     }
     
+    
+
+        
 }
 
 //MARK: Extensions
