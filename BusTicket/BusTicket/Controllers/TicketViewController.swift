@@ -45,4 +45,7 @@ class TicketViewController: UIViewController {
     private func setupImage(){
         ticketImage.image = ticketInfoModel?.companyImage
     }
+    @IBAction func goToMyTicketsButtonClicked(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 1
+    }
 }

@@ -367,13 +367,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGJ-2r-dvE">
+                                <rect key="frame" x="64" y="733.66666666666663" width="265" height="34.333333333333371"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go To My Tickets"/>
+                                <connections>
+                                    <action selector="goToMyTicketsButtonClicked:" destination="6Nz-UG-Uli" eventType="touchUpInside" id="D5t-nA-W1c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cvv-dd-SR5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cvv-dd-SR5" firstAttribute="trailing" secondItem="Knc-2t-WY2" secondAttribute="trailing" constant="64" id="3ON-U5-a88"/>
                             <constraint firstItem="j7i-hr-5zw" firstAttribute="top" secondItem="Cxp-Bj-r0k" secondAttribute="bottom" constant="16" id="7Yb-ug-4tf"/>
+                            <constraint firstItem="cvv-dd-SR5" firstAttribute="bottom" secondItem="pGJ-2r-dvE" secondAttribute="bottom" constant="50" id="7jq-ov-iWk"/>
                             <constraint firstItem="cvv-dd-SR5" firstAttribute="trailing" secondItem="gMp-Ls-Fb1" secondAttribute="trailing" constant="64" id="Auz-c7-784"/>
+                            <constraint firstItem="pGJ-2r-dvE" firstAttribute="leading" secondItem="cvv-dd-SR5" secondAttribute="leading" constant="64" id="DER-Qm-5Bv"/>
                             <constraint firstItem="4Rw-7v-KnM" firstAttribute="centerX" secondItem="lVn-LP-XbD" secondAttribute="centerX" id="F0Y-py-kAq"/>
                             <constraint firstItem="Knc-2t-WY2" firstAttribute="leading" secondItem="cvv-dd-SR5" secondAttribute="leading" constant="64" id="FLL-GV-ggJ"/>
                             <constraint firstItem="Cxp-Bj-r0k" firstAttribute="top" secondItem="4Rw-7v-KnM" secondAttribute="bottom" constant="16" id="Kor-28-WUE"/>
@@ -386,6 +397,7 @@
                             <constraint firstItem="cvv-dd-SR5" firstAttribute="trailing" secondItem="Cxp-Bj-r0k" secondAttribute="trailing" constant="8" id="fzp-r1-E85"/>
                             <constraint firstItem="SgC-BF-CFh" firstAttribute="top" secondItem="a1O-nj-l8I" secondAttribute="bottom" constant="32" id="hUm-ne-hnd"/>
                             <constraint firstItem="gMp-Ls-Fb1" firstAttribute="leading" secondItem="cvv-dd-SR5" secondAttribute="leading" constant="64" id="iEV-6I-nPf"/>
+                            <constraint firstItem="cvv-dd-SR5" firstAttribute="trailing" secondItem="pGJ-2r-dvE" secondAttribute="trailing" constant="64" id="jv0-bE-YwO"/>
                             <constraint firstItem="cvv-dd-SR5" firstAttribute="trailing" secondItem="SgC-BF-CFh" secondAttribute="trailing" constant="64" id="nM2-9Q-q52"/>
                             <constraint firstItem="j7i-hr-5zw" firstAttribute="leading" secondItem="cvv-dd-SR5" secondAttribute="leading" constant="64" id="p8L-kF-DPk"/>
                             <constraint firstItem="gMp-Ls-Fb1" firstAttribute="top" secondItem="SgC-BF-CFh" secondAttribute="bottom" constant="32" id="pLO-yl-nZu"/>
@@ -406,12 +418,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ph-xu-wW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4343" y="730"/>
+            <point key="canvasLocation" x="4342.7480916030536" y="729.57746478873241"/>
         </scene>
         <!--My Tickets-->
         <scene sceneID="PE1-Yc-1e5">
             <objects>
-                <viewController id="OpL-mk-oDK" customClass="MyTicketsViewController" customModule="BusTicket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyTicketsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OpL-mk-oDK" customClass="MyTicketsViewController" customModule="BusTicket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f6h-Dg-TP7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -432,7 +444,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Tickets" id="gis-ce-RRW"/>
                     <connections>
-                        <outlet property="myTicketsTableView" destination="h7A-kH-4Vz" id="NOT-aM-JDE"/>
+                        <outlet property="myTicketsTableView" destination="h7A-kH-4Vz" id="QEJ-fn-F2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vnp-DX-HtZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -26,7 +26,10 @@ class MyTicketsViewController: UIViewController {
         myTicketsTableView.register(UINib(nibName: "TicketTableViewCell", bundle: nil), forCellReuseIdentifier: "ticketCell")
         
         setupEmptyView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
         getTickets()
+        myTicketsTableView.reloadData()
     }
     
     
@@ -48,18 +51,7 @@ class MyTicketsViewController: UIViewController {
             
             if !results.isEmpty {
                 for result in results as! [NSManagedObject] {
-                    guard let name = result.value(forKey: "name") as? String else { return }
-                    guard let surname = result.value(forKey: "surname") as? String else { return }
-                    guard let id = result.value(forKey: "id") as? String else { return }
-                    guard let departure = result.value(forKey: "departure") as? String else { return }
-                    guard let arrival = result.value(forKey: "arrival") as? String else { return }
-                    guard let time = result.value(forKey: "time") as? String else { return }
-                    guard let seats = result.value(forKey: "seats") as? String else { return }
-                    guard let company = result.value(forKey: "company") as? String else { return }
-                    guard let companyImage = result.value(forKey: "image") as? Data else { return }
-                    guard let price = result.value(forKey: "price") as? String else { return }
-                    if let image = UIImage(data: companyImage) {
-                        let ticket = MyTicket(passengerName: name, passengerSurname: surname, passengerId: id, passengerDeparture: departure, passengerArrival: arrival, passengerTime: time, passengerSeats: seats, passengerTicketPrice: price, passengerTicketCompany: company, passengerTicketCompanyImage: image)
+                    if let ticket = createTicket(from: result) {
                         myTickets.append(ticket)
                     } else {
                         print("Uiimage failed to convert from data")
@@ -69,13 +61,28 @@ class MyTicketsViewController: UIViewController {
         } catch {
             print("Datalar cekilemedi...")
         }
-        
-        if myTickets.isEmpty {
-            toggleEmptyViewVisibility(true)
-        } else {
-            toggleEmptyViewVisibility(false)
-        }
+        toggleEmptyViewVisibility(myTickets.isEmpty)
     }
+    
+    private func createTicket(from result: NSManagedObject) -> MyTicket? {
+        guard
+            let name = result.value(forKey: "name") as? String,
+            let surname = result.value(forKey: "surname") as? String,
+            let id = result.value(forKey: "id") as? String,
+            let departure = result.value(forKey: "departure") as? String,
+            let arrival = result.value(forKey: "arrival") as? String,
+            let time = result.value(forKey: "time") as? String,
+            let seats = result.value(forKey: "seats") as? String,
+            let company = result.value(forKey: "company") as? String,
+            let companyImage = result.value(forKey: "image") as? Data,
+            let price = result.value(forKey: "price") as? String,
+            let image = UIImage(data: companyImage)
+        else {
+            return nil
+        }
+        return MyTicket(passengerName: name, passengerSurname: surname, passengerId: id, passengerDeparture: departure, passengerArrival: arrival, passengerTime: time, passengerSeats: seats, passengerTicketPrice: price, passengerTicketCompany: company, passengerTicketCompanyImage: image)
+    }
+    
 }
 
 //MARK: Extensions
