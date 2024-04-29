@@ -16,10 +16,11 @@ This application about ticket purchasing automation for buses with this applicat
 - Readability
 ## Nice to Have
 - A Decent Design
-## Demo
+## Demo 1
+https://github.com/agahberkknglr/turkcell-odevler/assets/79965739/6761ced9-1b2b-4e0d-9549-3303b582b5b1
 
-- https://github.com/agahberkknglr/turkcell-odevler/assets/79965739/6761ced9-1b2b-4e0d-9549-3303b582b5b1
-- https://github.com/agahberkknglr/turkcell-odevler/assets/79965739/3848ff8b-00ae-4e2b-afdb-eb1313582b42
+https://github.com/agahberkknglr/turkcell-odevler/assets/79965739/3848ff8b-00ae-4e2b-afdb-eb1313582b42
+
 
 
 
