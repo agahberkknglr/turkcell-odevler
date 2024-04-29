@@ -15,7 +15,7 @@ class MyTicketsViewController: UIViewController {
     
     //MARK: Variables
     var emptyView: EmptyView?
-    lazy var myTickets = [MyTicket]()
+    var myTickets = [MyTicket]()
     
     //MARK: LifeCycles
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class MyTicketsViewController: UIViewController {
         getTickets()
     }
     
+    
     //MARK: Functions
     func setupEmptyView() {
         emptyView = EmptyView(frame: myTicketsTableView.bounds)
@@ -37,6 +38,7 @@ class MyTicketsViewController: UIViewController {
     }
     
     private func getTickets() {
+        myTickets.removeAll()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
@@ -69,9 +71,9 @@ class MyTicketsViewController: UIViewController {
         }
         
         if myTickets.isEmpty {
-            toggleEmptyViewVisibility()
+            toggleEmptyViewVisibility(true)
         } else {
-            toggleEmptyViewVisibility()
+            toggleEmptyViewVisibility(false)
         }
     }
 }
@@ -89,11 +91,7 @@ extension MyTicketsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func toggleEmptyViewVisibility() {
-        if myTickets.isEmpty {
-            emptyView?.isHidden = false
-        } else {
-            emptyView?.isHidden = true
-        }
+    func toggleEmptyViewVisibility(_ isEmpty: Bool) {
+        emptyView?.isHidden = !isEmpty
     }
 }
